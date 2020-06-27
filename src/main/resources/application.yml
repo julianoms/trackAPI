@@ -1,0 +1,19 @@
+server:
+  port: 9012
+
+kafka:
+  bootstrap-servers: localhost:9092
+  topic.request-topic: requesttracktopic
+  topic.requestreply-topic: replytracktopic
+  consumergroup: trackconsumergroup
+
+
+spring:
+  kafka:
+    producer:
+      bootstrap-servers: localhost:9092
+      client-id: track-producer
+    consumer:
+      group-id: trackconsumergroup
+      auto-offset-reset: earliest
+      enable-auto-commit: false

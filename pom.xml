@@ -27,6 +27,12 @@
 			<groupId>org.springframework.kafka</groupId>
 			<artifactId>spring-kafka</artifactId>
 		</dependency>
+		<!-- https://mvnrepository.com/artifact/io.projectreactor.kafka/reactor-kafka -->
+		<dependency>
+			<groupId>io.projectreactor.kafka</groupId>
+			<artifactId>reactor-kafka</artifactId>
+			<version>1.2.2.RELEASE</version>
+		</dependency>
 
 		<dependency>
 			<groupId>org.projectlombok</groupId>
