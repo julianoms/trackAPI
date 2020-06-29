@@ -15,11 +15,11 @@ import java.util.Map;
 @Configuration
 public class SpringKafkaConfiguration {
 
-    @Value("kafka.ootstrap-servers")
+    @Value("${kafka.bootstrap-servers}")
     private String bootstrapServersConfig;
 
     @Bean
-    public SenderOptions<Integer, String> producerConfig() {
+    public SenderOptions<String, String> producerConfig() {
         final Map<String, Object> producerProps = new HashMap<>();
         producerProps.put(ProducerConfig.KEY_SERIALIZER_CLASS_CONFIG, IntegerSerializer .class);
         producerProps.put(ProducerConfig.VALUE_SERIALIZER_CLASS_CONFIG, StringSerializer .class);
@@ -29,7 +29,7 @@ public class SpringKafkaConfiguration {
     }
 
     @Bean
-    public KafkaSender getProducer() {
+    public KafkaSender<String, String> getProducer() {
        return KafkaSender.create(producerConfig());
     }
 }

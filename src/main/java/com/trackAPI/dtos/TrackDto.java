@@ -15,7 +15,7 @@ public class TrackDto {
     private String name;
 
     @NonNull
-    private String AlbumName;
+    private String albumName;
 
     private String track_number;
 
